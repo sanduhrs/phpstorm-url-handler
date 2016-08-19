@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# PhpStorm URL Handler
+# phpstorm://open?url=file://@file&line=@line
+#
+# @license GPL
+# @author Stefan Auditor <stefan.auditor@erdfisch.de>
+
+arg=${1}
+
+# Get the file path.
+file=$(echo "${arg}" | sed -r 's/.*file:\/\/(.*)&line=.*/\1/')
+
+# Get the line number.
+line=$(echo "${arg}" | sed -r 's/.*file:\/\/.*&line=(.*)/\1/')
+
+/usr/bin/env phpstorm --line "${line}" "${file}"
