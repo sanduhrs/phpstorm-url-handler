@@ -2,8 +2,7 @@
 Version=1.0
 Type=Application
 Name=PhpStorm URL Handler
-Comment=Handle URL Scheme phpstorm://open?url=file://@file&line=@line
-# or Alternate URL Scheme phpstorm://open?file=@file&line=@line
+Comment=Handle URL Scheme phpstorm://open?url=file://@file&line=@line and phpstorm://open?file=@file&line=@line
 Icon=phpstorm
 NoDisplay=true
 Categories=TextEditor;Utility;
