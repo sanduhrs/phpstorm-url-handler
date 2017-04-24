@@ -8,6 +8,7 @@ Specification for use in Gnome and KDE desktop environments.
 
     cp phpstorm-url-handler /usr/bin/phpstorm-url-handler
     desktop-file-install phpstorm-url-handler.desktop
+    update-desktop-database
 
 ## Usage
 
