@@ -21,6 +21,4 @@ if type phpstorm > /dev/null; then
     /usr/bin/env phpstorm --line "${line}" "${file}"
 elif type pstorm > /dev/null; then
     /usr/bin/env pstorm --line "${line}" "${file}"
-else # Notify the user if the commands doesn't exist.
-    notify-send "PhpStorm url loader" "Can't open PhpStorm with command 'phpstorm' or 'pstorm'."
 fi
