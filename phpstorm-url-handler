@@ -10,6 +10,9 @@
 arg=${1}
 pattern=".*file(:\/\/|\=)(.*)&line=(.*)"
 
+# Replace possible url-encoded forward-slashes
+arg=$(echo "${arg}" | sed -r "s/%2f/\//Ig")
+
 # Get the file path.
 file=$(echo "${arg}" | sed -r "s/${pattern}/\2/")
 
