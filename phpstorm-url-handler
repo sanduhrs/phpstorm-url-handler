@@ -7,7 +7,10 @@
 # @license GPL
 # @author Stefan Auditor <stefan.auditor@erdfisch.de>
 
-arg=${1}
+# https://stackoverflow.com/a/37840948/465732
+function urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+
+arg=$(urldecode "${1}")
 pattern=".*file(:\/\/|\=)(.*)&line=(.*)"
 
 # Get the file path.
