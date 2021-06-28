@@ -16,6 +16,9 @@ file=$(echo "${arg}" | sed -r "s/${pattern}/\2/")
 # Get the line number.
 line=$(echo "${arg}" | sed -r "s/${pattern}/\3/")
 
+function urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+file=$(urldecode "$file")
+
 # Check if phpstorm|pstorm command exist.
 if type phpstorm > /dev/null; then
     /usr/bin/env phpstorm --line "${line}" "${file}"
