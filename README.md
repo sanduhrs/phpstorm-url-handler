@@ -6,9 +6,16 @@ Specification for use in Gnome and KDE desktop environments.
 
 ## Installation
 
-    cp phpstorm-url-handler /usr/bin/phpstorm-url-handler
-    desktop-file-install phpstorm-url-handler.desktop
-    update-desktop-database
+If not run `phpstorm` or `pstorm`
+
+    sudo ln -s {Your path to PhpStorm}/bin/phpstorm.sh /usr/bin/phpstorm
+
+Execute next lines
+
+    sudo cp phpstorm-url-handler /usr/bin/phpstorm-url-handler
+    sudo chmod /usr/bin/phpstorm-url-handler 0755
+    sudo desktop-file-install phpstorm-url-handler.desktop
+    sudo update-desktop-database
 
 ## Usage
 
