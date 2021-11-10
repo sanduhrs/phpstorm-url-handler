@@ -26,8 +26,10 @@ placing a link of the following kind in the markup:
 Added in ability to path map to local files from docker/devilbox.
 
 Edit phpstorm-url-handler file, find the following lines:
-find="/shared/httpd/"
-replace="/home/michael/public_html/";
+
+    find="/shared/httpd/"
+    
+    replace="/home/michael/public_html/";
 
 change the content of the find variable with the path the files are located on docker/devilbox, and change the content of the replace variable with the path to the local files.
 
