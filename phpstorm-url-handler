@@ -7,15 +7,19 @@
 # @license GPL
 # @author Stefan Auditor <stefan.auditor@erdfisch.de>
 
-arg=${1}
+urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+arg=$(urldecode "${1}")
 pattern=".*file(:\/\/|\=)(.*)&line=(.*)"
+find="/shared/httpd/"
+replace="/home/michael/public_html/";
+
 
 # Get the file path.
 file=$(echo "${arg}" | sed -r "s/${pattern}/\2/")
-
+file=$(echo "${file/${find}/${replace}}")
 # Get the line number.
 line=$(echo "${arg}" | sed -r "s/${pattern}/\3/")
-
+ 
 # Check if phpstorm|pstorm command exist.
 if type phpstorm > /dev/null; then
     /usr/bin/env phpstorm --line "${line}" "${file}"
