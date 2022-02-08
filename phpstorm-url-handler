@@ -24,3 +24,9 @@ if type phpstorm > /dev/null; then
 elif type pstorm > /dev/null; then
     /usr/bin/env pstorm --line "${line}" "${file}"
 fi
+
+if type wmctrl > /dev/null; then
+    /usr/bin/env wmctrl -i -a $(wmctrl -l | grep "${file}" | tail -n 1 | cut -d ' ' -f1)
+fi
+
+exit 0
