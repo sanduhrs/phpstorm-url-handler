@@ -3,6 +3,8 @@
 # PhpStorm URL Handler
 # phpstorm://open?url=file://@file&line=@line
 # phpstorm://open?file=@file&line=@line
+# phpstorm://open?url=file://@file:@line
+# phpstorm://open?file=@file:line
 #
 # @license GPL
 # @author Stefan Auditor <stefan@auditor.email>
@@ -10,13 +12,13 @@
 function urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
 arg=$(urldecode "${1}")
-pattern=".*file(:\/\/|\=)(.*)&line=(.*)"
+pattern=".*file(:\/\/|\=)(.*)(:|&line=)(.*)"
 
 # Get the file path.
 file=$(echo "${arg}" | sed -r "s/${pattern}/\2/")
 
 # Get the line number.
-line=$(echo "${arg}" | sed -r "s/${pattern}/\3/")
+line=$(echo "${arg}" | sed -r "s/${pattern}/\4/")
 
 # Check if phpstorm|pstorm command exist.
 if type phpstorm > /dev/null; then
