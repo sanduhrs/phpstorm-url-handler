@@ -5,7 +5,7 @@
 # phpstorm://open?file=@file&line=@line
 #
 # @license GPL
-# @author Stefan Auditor <stefan.auditor@erdfisch.de>
+# @author Stefan Auditor <stefan@auditor.email>
 
 arg=${1}
 pattern=".*file(:\/\/|\=)(.*)&line=(.*)"
