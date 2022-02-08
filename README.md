@@ -6,16 +6,27 @@ Specification for use in Gnome and KDE desktop environments.
 
 ## Installation
 
-If not run `phpstorm` or `pstorm`
+The executable `phpstorm` or `pstorm` must be in your `$PATH`.
+If it is not, either add the install location to your path
 
-    sudo ln -s {Your path to PhpStorm}/bin/phpstorm.sh /usr/bin/phpstorm
+    export PATH="/path/to/phpstorm/bin/phpstorm.sh:$PATH"
 
-Execute next lines
+or symlink it to one of `/usr/bin` or `/usr/local/bin` - which already should be in your `$PATH`.
+Use `sudo` if needed
 
-    sudo cp phpstorm-url-handler /usr/bin/phpstorm-url-handler
-    sudo chmod /usr/bin/phpstorm-url-handler 0755
-    sudo desktop-file-install phpstorm-url-handler.desktop
-    sudo update-desktop-database
+    ln -s /path/to/phpstorm/bin/phpstorm.sh /usr/bin/phpstorm
+
+Then copy the actual handler to your `$PATH` and make it executable.
+Use `sudo` if needed
+
+    cp phpstorm-url-handler /usr/bin/phpstorm-url-handler
+    chmod +x /usr/bin/phpstorm-url-handler
+
+Install the `.desktop` file to register the mime-types.
+Use `sudo` if needed
+
+    desktop-file-install phpstorm-url-handler.desktop
+    update-desktop-database
 
 ## Usage
 
