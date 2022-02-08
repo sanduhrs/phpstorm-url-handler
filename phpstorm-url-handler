@@ -7,7 +7,9 @@
 # @license GPL
 # @author Stefan Auditor <stefan@auditor.email>
 
-arg=${1}
+function urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+
+arg=$(urldecode "${1}")
 pattern=".*file(:\/\/|\=)(.*)&line=(.*)"
 
 # Get the file path.
