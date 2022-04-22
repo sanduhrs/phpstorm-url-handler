@@ -8,5 +8,5 @@ NoDisplay=true
 Categories=TextEditor;Utility;
 Exec=phpstorm-url-handler %u
 Terminal=false
-MimeType=x-scheme-handler/phpstorm;x-scheme-handler/pstorm;
+MimeType=x-scheme-handler/phpstorm;x-scheme-handler/pstorm;x-scheme-handler/txmt;
 X-Desktop-File-Install-Version=0.21
